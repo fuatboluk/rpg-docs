@@ -1,0 +1,95 @@
+
+    <!-- details page -->
+    <section class="single section-sm pb-0 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="list-styled">
+                            <a class="back-btn" href="{{host}}/index"></a>
+                            <li class="sidelist">
+                                <a href="{{host}}/docs/getting-started">Başlarken</a>
+                                <ul>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/meet-rpg">RPG ile Tanışın</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/installation">Kurulum</a>
+                                    </li>
+                                    <li class="sidelist active">
+                                        <a href="{{host}}/docs/configuration">Yapılandırma</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/customization">Özelleştirme</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="p-lg-5 p-4 bg-white">
+                        <h2 class="mb-5">Yapılandırma</h2>
+                        <div class="content">
+                            <p>MVC tasarım desenlerinde rota akışı, tek bir PHP dosyasından başlar. RPG Framework'te MVC tasarım deseni kullanılır ve akışın başlangıç dosyası index.php'dir. Bu alanda popüler web sunucularından Apache ve Nginx'i, RPG Framework'ün 'public' dizinindeki index.php dosyasını işaret edecek şekilde yapılandıracağız.</p>
+                            <h4 id="nginx">Nginx</h4>
+                            <pre class="pre">
+<code class="code">
+server {
+    listen 80;
+
+    server_name localhost;
+    root /var/www/html/rpg/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_hide_header X-Powered-By;
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+</code>
+                            </pre>
+                            <div class="notices info">
+                                <span>{{info}}</span>
+                                <p>Projenize erişebilmek için 'server_name' değerini alan adınız olarak tanımlamalısınız.</p>
+                            </div>
+                        </div>
+                        <p class="post-meta border-bottom pb-3 mb-0 mt-3">Son Güncelleme: {{last_update}}</p>
+                        <nav class="pagination mt-3">
+                            <a class="nav nav-prev" href="{{host}}/docs/installation">
+                                <i class="ti-arrow-left mr-2"></i>
+                                <span class="d-none d-md-block">Kurulum</span>
+                            </a>
+                            <a class="nav nav-next" href="{{host}}/docs/customization">
+                                <span class="d-none d-md-block">Özelleştirme</span>
+                                <i class="ti-arrow-right ml-2"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /details page -->

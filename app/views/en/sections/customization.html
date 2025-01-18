@@ -1,0 +1,76 @@
+
+    <!-- details page -->
+    <section class="single section-sm pb-0 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="list-styled">
+                            <a class="back-btn" href="{{host}}/index"></a>
+                            <li class="sidelist">
+                                <a href="{{host}}/docs/getting-started">Getting Started</a>
+                                <ul>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/meet-rpg">Meet RPG</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/installation">Installation</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/configuration">Configuration</a>
+                                    </li>
+                                    <li class="sidelist active">
+                                        <a href="{{host}}/docs/customization">Customization</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="p-lg-5 p-4 bg-white">
+                        <h2 class="mb-5">Customization</h2>
+                        <div class="content">
+                            <p>System settings are defined in settings.php. The settings you can change are Constants, Database, and Defaults.</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Section Name</th>
+                                        <th>Contents</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Constants </td>
+                                        <td>Timezone, language, debug definitions</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Database</td>
+                                        <td>Database connection information</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Defaults</td>
+                                        <td>Project defaults</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Defaults are located in system/settings.php. You can enter as many defaults as you want in this field. There are two important variables in the defaults: $index and $error.</p>
+                            <p>$index is the page that receives incoming links to your website. If you want your website homepage to be accessed as "example.com" and "example.com/index", do not change the default value. You need to create app/controllers/index.php.</p>
+                            <p>$error is the page that your website will call when an address is not found. The default value is "not_found". You can call any error page you want by creating app/controllers/not_found.php.</p>
+                        </div>
+                        <p class="post-meta border-bottom pb-3 mb-0 mt-3">Last Update: {{last_update}}</p>
+                        <nav class="pagination mt-3">
+                            <a class="nav nav-prev" href="{{host}}/docs/configuration">
+                                <i class="ti-arrow-left mr-2"></i>
+                                <span class="d-none d-md-block">Configuration</span>
+                            </a>
+                            <a class="nav nav-next" href="#">
+
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /details page -->

@@ -1,0 +1,95 @@
+
+    <!-- details page -->
+    <section class="single section-sm pb-0 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="list-styled">
+                            <a class="back-btn" href="{{host}}/index"></a>
+                            <li class="sidelist">
+                                <a href="{{host}}/docs/getting-started">Getting Started</a>
+                                <ul>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/meet-rpg">Meet RPG</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/installation">Installation</a>
+                                    </li>
+                                    <li class="sidelist active">
+                                        <a href="{{host}}/docs/configuration">Configuration</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/customization">Customization</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="p-lg-5 p-4 bg-white">
+                        <h2 class="mb-5">Configuration</h2>
+                        <div class="content">
+                            <p>In MVC design patterns, the routing flow starts from a single PHP file. RPG Framework uses the MVC design pattern, and the starting file for the flow is index.php. In this section, we will configure popular web servers, Apache and Nginx, to point to the index.php file in the 'public' directory of the RPG Framework.</p>
+                            <h4 id="nginx">Nginx</h4>
+                            <pre class="pre">
+<code class="code">
+server {
+    listen 80;
+
+    server_name localhost;
+    root /var/www/html/rpg/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ ^/index\.php(/|$) {
+        fastcgi_hide_header X-Powered-By;
+        include fastcgi_params;
+        fastcgi_pass unix:/run/php-fpm/www.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+</code>
+                            </pre>
+                            <div class="notices info">
+                                <span>{{info}}</span>
+                                <p>To access your project, you must define the 'server_name' value as your domain name.</p>
+                            </div>
+                        </div>
+                        <p class="post-meta border-bottom pb-3 mb-0 mt-3">Last Update: {{last_update}}</p>
+                        <nav class="pagination mt-3">
+                            <a class="nav nav-prev" href="{{host}}/docs/installation">
+                                <i class="ti-arrow-left mr-2"></i>
+                                <span class="d-none d-md-block">Installation</span>
+                            </a>
+                            <a class="nav nav-next" href="{{host}}/docs/customization">
+                                <span class="d-none d-md-block">Customization</span>
+                                <i class="ti-arrow-right ml-2"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /details page -->

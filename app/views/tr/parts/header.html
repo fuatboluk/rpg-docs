@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+
+<head>
+
+    <title>{{title}}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{{host}}/plugins/bootstrap/bootstrap.min.css">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="{{host}}/plugins/themify-icons/themify-icons.css">
+    <!--Favicon-->
+    <link rel="icon" href="{{host}}/images/favicon.png" type="image/x-icon">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link href="{{host}}/assets/style.css" rel="stylesheet" media="screen" />
+
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="{{header_css}}" data-background="{{header_img}}">
+
+        <nav class="{{navbar_css}}">
+            <div class="container">
+                <a class="navbar-brand px-2" href="/">{{logo}}</a>
+                <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
+                    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center" id="navigation">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{host}}/{{home_url}}">{{home}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{host}}/{{contact_url}}">{{contact}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="{{host}}/{{docs_url}}">{{docs}}</a>
+                        </li>
+                    </ul>
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-lang dropdown-toggle {{drop_color}}" data-toggle="dropdown-menu">
+                            {{language}}
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{host}}/en">{{en}}</a>
+                            <a class="dropdown-item" href="{{host}}/tr">{{tr}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        {{search}}
+
+    </header>
+    <!-- /header -->

@@ -1,0 +1,76 @@
+
+    <!-- details page -->
+    <section class="single section-sm pb-0 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="list-styled">
+                            <a class="back-btn" href="{{host}}/index"></a>
+                            <li class="sidelist">
+                                <a href="{{host}}/docs/getting-started">Başlarken</a>
+                                <ul>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/meet-rpg">RPG ile Tanışın</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/installation">Kurulum</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/configuration">Yapılandırma</a>
+                                    </li>
+                                    <li class="sidelist active">
+                                        <a href="{{host}}/docs/customization">Özelleştirme</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="p-lg-5 p-4 bg-white">
+                        <h2 class="mb-5">Özelleştirme</h2>
+                        <div class="content">
+                            <p>Sistem ayarları settings.php dosyasında tanımlanmıştır. Değiştirebileceğiniz ayarlar şunlardır: Sabitler (Constants), Veritabanı (Database) ve Varsayılanlar (Defaults).</p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Bölüm Adı</th>
+                                        <th>İçerikler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Sabitler</td>
+                                        <td>Zaman dilimi, dil, hata ayıklama tanımlamaları</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Veritabanı</td>
+                                        <td>Veritabanı bağlantı bilgileri</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Varsayılanlar</td>
+                                        <td>Proje varsayılanları</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>Varsayılanlar (Defaults), system/settings.php dosyasındadır. Bu alana istediğiniz kadar varsayılan ekleyebilirsiniz. Varsayılanlarda iki önemli değişken vardır: $index ve $error.</p>
+                            <p>$index, web sitenize gelen bağlantıları alan sayfadır. Web sitenizin ana sayfasına "example.com" ve "example.com/index" şeklinde erişilmesini istiyorsanız, varsayılan değeri değiştirmeyin. app/controllers/index.php dosyasını oluşturmanız gerekmektedir.</p>
+                            <p>$error, bir adres bulunamadığında web sitenizin çağıracağı sayfadır. Varsayılan değer "not_found"dır. app/controllers/not_found.php dosyasını oluşturarak istediğiniz hata sayfasını çağırabilirsiniz.</p>
+                        </div>
+                        <p class="post-meta border-bottom pb-3 mb-0 mt-3">Son Güncelleme: {{last_update}}</p>
+                        <nav class="pagination mt-3">
+                            <a class="nav nav-prev" href="{{host}}/docs/configuration">
+                                <i class="ti-arrow-left mr-2"></i>
+                                <span class="d-none d-md-block">Yapılandırma</span>
+                            </a>
+                            <a class="nav nav-next" href="#">
+
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /details page -->

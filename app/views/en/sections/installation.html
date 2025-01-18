@@ -1,0 +1,64 @@
+
+    <!-- details page -->
+    <section class="single section-sm pb-0 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar">
+                        <ul class="list-styled">
+                            <a class="back-btn" href="{{host}}/index"></a>
+                            <li class="sidelist">
+                                <a href="{{host}}/docs/getting-started">Getting Started</a>
+                                <ul>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/meet-rpg">Meet RPG</a>
+                                    </li>
+                                    <li class="sidelist active">
+                                        <a href="{{host}}/docs/installation">Installation</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/configuration">Configuration</a>
+                                    </li>
+                                    <li class="sidelist">
+                                        <a href="{{host}}/docs/customization">Customization</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="p-lg-5 p-4 bg-white">
+                        <h2 class="mb-5">Installation</h2>
+                        <div class="content">
+                            <p>RPG Framework does not require any additional setup tools or dozens of PHP libraries. Simply download the files from the GitHub repository and copy them to the default directory of your web server. You can do this in two different ways:</p>
+                            <h4 id="git">Using the git command</h4>
+                            <p>In the command line, navigate to the default directory of your web server:</p>
+                            <code class="code">cd /var/www/html</code>
+                            <div class="notices note">
+                                <span>{{note}}</span>
+                                <p>Adjust the command according to the default working directory of your web server for your platform!</p>
+                            </div>
+                            <p>We will clone the RPG Framework into the directory we are in using the git command:</p>
+                            <code class="code">git clone https://github.com/fuatboluk/rpg-framework</code>
+                            <p>If everything went smoothly, a new directory named "rpg-framework" will be created within the directory. You can rename this directory according to your project's name if you wish.</p>
+                            <h4 id="archive">By downloading an archive file</h4>
+                            <p>Now, go to <a href="https://github.com/fuatboluk/rpg-framework" target="_blank">rpg-framework</a> and download the latest RPG version as an archive. Then, extract the archive file into the default directory of your web server.</p>
+                        </div>
+                        <p class="post-meta border-bottom pb-3 mb-0 mt-3">Last Update: {{last_update}}</p>
+                        <nav class="pagination mt-3">
+                            <a class="nav nav-prev" href="{{host}}/docs/meet-rpg">
+                                <i class="ti-arrow-left mr-2"></i>
+                                <span class="d-none d-md-block">Meet RPG</span>
+                            </a>
+                            <a class="nav nav-next" href="{{host}}/docs/configuration">
+                                <span class="d-none d-md-block">Configuration</span>
+                                <i class="ti-arrow-right ml-2"></i>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /details page -->
